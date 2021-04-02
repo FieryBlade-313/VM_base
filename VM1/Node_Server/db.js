@@ -23,9 +23,9 @@ module.exports.saveStudent = function (rollno, name) {
 
 module.exports.getStudent = function (rollno) {
     try {
-        return Stud_data.findOne({ rollno: rollno }, { '_id': 0, '__v': 0 }).lean()
+        return Stud_data.findOne({ rollno: rollno }, { '_id': 0, '__v': 0 }).lean();
     }
     catch {
-        return null
+        return null;
     }
 }
