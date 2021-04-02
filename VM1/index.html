@@ -1,0 +1,23 @@
+<html>
+<title></title>
+<script>
+
+    var rollno = "S20180010160"
+
+    function httpGetStudent(theUrl, callback) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+                var resp = JSON.parse(this.responseText);
+                document.getElementById("main").innerText = resp['rollno'];
+            }
+        }
+        xmlHttp.open("GET", theUrl + '/' + rollno, true); // true for asynchronous 
+        xmlHttp.send(null);
+    }
+
+</script>
+
+<body id="main" onload='httpGetStudent("http://localhost:3000/stud_data")'></body>
+
+</html>
