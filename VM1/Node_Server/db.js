@@ -25,7 +25,7 @@ module.exports.getStudent = function (rollno) {
     try {
         return Stud_data.findOne({ rollno: rollno }, { '_id': 0, '__v': 0 }).lean();
     }
-    finally {
+    catch (e) {
         return null;
     }
 }
