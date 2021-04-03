@@ -2,7 +2,7 @@
 Description=Service for node server
 
 [Service]
-ExecStart=/var/www/html/Node_Server/index.js
+ExecStart=/var/www/html/Node_Server/node index.js
 Restart=always
 User=nobody
 # Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
